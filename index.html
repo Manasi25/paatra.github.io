@@ -4,111 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paatra | Photography Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
     <style>
-        /* Base & Glassmorphism Navigation */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { 
-            font-family: 'Helvetica Neue', Helvetica, sans-serif; 
+            font-family: 'Montserrat', sans-serif; 
             background-color: #0a0a0a; 
             color: #ffffff; 
             line-height: 1.8; 
         }
 
+        /* Sophisticated Navigation */
         nav {
             position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(12px);
+            background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center;
         }
 
-        /* Stylized Logo */
+        /* Beautiful Logo Design */
         .logo { 
-            font-size: 1.6rem; 
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem; 
             letter-spacing: 6px; 
-            text-transform: uppercase; 
-            font-weight: 200;
-            color: #fff;
             text-decoration: none;
+            color: #fff;
+            font-weight: 400;
         }
-        .logo span {
-            font-weight: 600;
-            border: 1px solid #fff;
-            padding: 0 8px;
-            margin-right: 5px;
-        }
+        .logo span { font-weight: 200; opacity: 0.6; }
 
-        .nav-links { display: flex; list-style: none; gap: 20px; }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
         .nav-links a { 
-            color: #aaa; text-decoration: none; font-size: 0.75rem; 
+            color: #888; text-decoration: none; font-size: 0.7rem; 
             text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; 
         }
         .nav-links a:hover { color: #fff; }
-
-        /* Sections Styling */
-        section { padding: 100px 10%; }
-        .section-title { 
-            text-align: center; font-size: 2rem; font-weight: 300; 
-            letter-spacing: 6px; margin-bottom: 50px; text-transform: uppercase; 
-        }
 
         /* Hero */
         .hero {
             height: 100vh; display: flex; flex-direction: column;
             justify-content: center; align-items: center; text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(10,10,10,1)), 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(10,10,10,1)), 
                         url('images/paatra_profile.png') center/cover no-repeat fixed;
         }
-        .hero h1 { font-size: clamp(3rem, 10vw, 5rem); letter-spacing: 12px; font-weight: 200; margin-bottom: 10px; }
-        .hero p { font-style: italic; color: #888; letter-spacing: 2px; margin-bottom: 30px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3.5rem, 12vw, 6rem); letter-spacing: 15px; font-weight: 400; margin-bottom: 10px; }
+        .hero p { letter-spacing: 5px; color: #aaa; text-transform: uppercase; font-size: 0.8rem; }
+
+        /* Sections */
+        section { padding: 120px 10%; }
+        .section-title { 
+            text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; 
+            margin-bottom: 60px; font-weight: 400; letter-spacing: 2px;
+        }
 
         /* About & Vibe */
-        .about-content { max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; color: #ccc; }
-        .vibe-grid { margin-top: 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-        .vibe-item h4 { text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; font-weight: 400; color: #fff; }
-        .vibe-item p { color: #888; font-size: 0.9rem; }
+        .about-content { max-width: 800px; margin: 0 auto 80px; text-align: center; font-weight: 200; font-size: 1.1rem; color: #ccc; }
+        .vibe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 50px; }
+        .vibe-item { text-align: center; }
+        .vibe-item h4 { text-transform: uppercase; letter-spacing: 2px; margin-top: 15px; font-size: 0.9rem; font-weight: 400; }
+        .vibe-item p { color: #777; font-size: 0.85rem; margin-top: 10px; }
 
-        /* Services Cards */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        /* Pricing Cards */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .card { 
-            background: #111; padding: 40px; border: 1px solid #222; 
-            text-align: center; transition: 0.4s; 
+            background: #111; padding: 50px 30px; border: 1px solid #1a1a1a; 
+            text-align: center; transition: all 0.5s ease;
         }
-        .card:hover { border-color: #d4af37; background: #161616; }
-        .card h3 { margin-bottom: 15px; letter-spacing: 2px; font-weight: 400; font-size: 0.9rem; text-transform: uppercase; }
-        .price { display: block; font-size: 1.5rem; margin-bottom: 20px; color: #fff; font-weight: 300; }
+        .card:hover { border-color: #fff; transform: translateY(-10px); }
+        .card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 10px; font-weight: 400; }
+        .price { display: block; font-size: 1.2rem; margin-bottom: 25px; color: #aaa; font-weight: 200; }
 
+        /* Inquiry Form */
+        .form-container { max-width: 700px; margin: 0 auto; background: #111; padding: 40px; border-radius: 2px; }
+        .form-group { margin-bottom: 25px; display: flex; flex-direction: column; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; color: #666; }
+        input, textarea, select { 
+            background: transparent; border: none; border-bottom: 1px solid #333; 
+            padding: 12px 0; color: #fff; font-family: inherit; font-size: 1rem; outline: none; transition: 0.3s;
+        }
+        input:focus, textarea:focus { border-bottom-color: #fff; }
+        
         /* Buttons */
         .btn {
-            display: inline-block; padding: 12px 28px; border: 1px solid #fff;
+            display: inline-block; padding: 15px 40px; border: 1px solid #fff;
             color: #fff; text-decoration: none; font-size: 0.7rem;
-            letter-spacing: 2px; text-transform: uppercase; transition: 0.3s;
+            letter-spacing: 3px; text-transform: uppercase; transition: 0.3s; cursor: pointer; background: transparent;
         }
         .btn:hover { background: #fff; color: #000; }
-        .btn-gold { border-color: #d4af37; color: #d4af37; }
+        
+        .btn-alt {
+            border-color: rgba(255,255,255,0.3);
+            color: #888;
+            margin-top: 15px;
+        }
+        .btn-alt:hover { border-color: #fff; color: #fff; background: transparent; }
 
-        /* Gallery */
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
-        .gallery img { width: 100%; height: 400px; object-fit: cover; opacity: 0.8; transition: 0.5s; }
-        .gallery img:hover { opacity: 1; }
+        footer { text-align: center; padding: 80px; border-top: 1px solid #1a1a1a; color: #444; font-size: 0.75rem; letter-spacing: 1px; }
 
-        footer { text-align: center; padding: 60px; border-top: 1px solid #222; color: #555; font-size: 0.8rem; }
-        footer a { color: #888; text-decoration: none; margin: 0 10px; }
-
-        @media (max-width: 768px) { .nav-links { display: none; } }
+        @media (max-width: 768px) { 
+            .nav-links { display: none; } 
+            .form-row { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="logo"><span>P</span>AATRA</a>
+        <a href="#" class="logo">PAATRA<span>.</span></a>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
+            <li><a href="#about">The Soul</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Gallery</a></li>
-            <li><a href="https://instagram.com/veg.traveler" target="_blank">Instagram</a></li>
+            <li><a href="#book">Book</a></li>
         </ul>
-        <a href="#book" class="btn" style="padding: 8px 15px; font-size: 0.6rem;">Book Now</a>
+        <a href="https://instagram.com/veg.traveler" target="_blank" style="color: #fff; text-decoration: none; font-size: 0.7rem; letter-spacing: 1px;">INSTAGRAM</a>
     </nav>
 
     <header class="hero">
@@ -117,66 +128,88 @@
     </header>
 
     <section id="about">
-        <h2 class="section-title">The Lens & The Soul</h2>
         <div class="about-content">
+            <h2 class="section-title">The Lens & The Soul</h2>
             <p>I love photography, travel, and nature. By combining these three passions, I seek to share a piece of the world's quiet magic with you. I don't just take photos; I collect moments of existence.</p>
         </div>
-
         <div class="vibe-grid">
-            <div class="vibe-item" style="text-align: center;">
-                <h4 style="font-size: 1.5rem;">✨</h4>
-                <h4>The Vibe</h4>
-                <p>I focus on <strong>candid laughter</strong> over stiff, awkward poses. We’ll move, talk, and let the real you shine through.</p>
-            </div>
-            <div class="vibe-item" style="text-align: center;">
-                <h4 style="font-size: 1.5rem;">☀️</h4>
-                <h4>The Light</h4>
-                <p>I'll help you find the <strong>perfect light</strong> and the most comfortable angles, ensuring you feel natural and radiant.</p>
-            </div>
+            <div class="vibe-item"><h4>✨ The Vibe</h4><p>Candid laughter over stiff poses. Real life, unscripted.</p></div>
+            <div class="vibe-item"><h4>☀️ The Light</h4><p>Finding the natural glow that makes you feel radiant.</p></div>
+            <div class="vibe-item"><h4>🌿 The Earth</h4><p>Nature is my studio. Let's explore the wild together.</p></div>
         </div>
     </section>
 
-    <section id="services" style="background: #0d0d0d;">
-        <h2 class="section-title">Services & Pricing</h2>
+    <section id="services" style="background: #080808;">
+        <h2 class="section-title">Investment</h2>
         <div class="services-grid">
             <div class="card">
-                <h3>Maternity Photoshoot</h3>
+                <h3>Maternity</h3>
                 <span class="price">$150 / hour</span>
-                <p style="color: #666; margin-bottom: 20px; font-size: 0.85rem;">Capturing the glow and grace of your new journey.</p>
-                <a href="mailto:teampaatra@gmail.com?subject=Booking: Maternity" class="btn">Inquire</a>
+                <a href="#book" class="btn">Select</a>
             </div>
             <div class="card">
                 <h3>Fall Family / Couple</h3>
                 <span class="price">$100 / hour</span>
-                <p style="color: #666; margin-bottom: 20px; font-size: 0.85rem;">Warm tones and genuine connection in the autumn air.</p>
-                <a href="mailto:teampaatra@gmail.com?subject=Booking: Family" class="btn">Inquire</a>
+                <a href="#book" class="btn">Select</a>
             </div>
             <div class="card">
                 <h3>Birthday Party</h3>
                 <span class="price">$75 / hour</span>
-                <p style="color: #666; margin-bottom: 20px; font-size: 0.85rem;">Preserving the joy, cakes, and candids of your celebration.</p>
-                <a href="mailto:teampaatra@gmail.com?subject=Booking: Birthday" class="btn">Inquire</a>
+                <a href="#book" class="btn">Select</a>
             </div>
         </div>
     </section>
 
-    <section id="portfolio">
-        <h2 class="section-title">Wanderlust Gallery</h2>
-        <div class="gallery">
-            <img src="images/gallery_photo1.png" alt="Nature">
-            <img src="images/gallery_photo2.png" alt="Travel">
-            <img src="images/gallery_photo3.png" alt="Nature">
+    <section id="book">
+        <h2 class="section-title">Begin Your Story</h2>
+        <div class="form-container">
+            <form action="https://formspree.io/f/teampaatra@gmail.com" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name *</label>
+                        <input type="text" name="first_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name *</label>
+                        <input type="text" name="last_name" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email Address *</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number (Optional)</label>
+                        <input type="tel" name="phone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Session Type *</label>
+                    <select name="session_type" required>
+                        <option value="Maternity">Maternity</option>
+                        <option value="Family/Couple">Fall Family / Couple</option>
+                        <option value="Birthday">Birthday Party</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Details & Vision *</label>
+                    <textarea name="details" rows="4" placeholder="Tell me a bit about what you are looking for..." required></textarea>
+                </div>
+                <div style="text-align: center;">
+                    <button type="submit" class="btn">Send Email Inquiry</button>
+                    <br>
+                    <p style="margin: 20px 0 10px; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; color: #444;">— or —</p>
+                    <a href="https://instagram.com/veg.traveler" target="_blank" class="btn btn-alt">DM on Instagram</a>
+                </div>
+            </form>
         </div>
     </section>
 
-    <section id="book" style="text-align: center; background: #111;">
-        <h2 class="section-title">Let's Create Together</h2>
-        <p style="margin-bottom: 30px; color: #888;">Ready to freeze time? Reach out to check my availability.</p>
-        <a href="mailto:teampaatra@gmail.com" class="btn btn-gold">Contact to Book</a>
-    </section>
-
     <footer>
-        <p>&copy; 2026 Paatra Photography | <a href="https://instagram.com/veg.traveler">Instagram</a> | <a href="mailto:teampaatra@gmail.com">teampaatra@gmail.com</a></p>
+        <p>PAATRA PHOTOGRAPHY &copy; 2026</p>
+        <p style="margin-top: 10px; opacity: 0.5;">teampaatra@gmail.com | @veg.traveler</p>
     </footer>
 
 </body>
