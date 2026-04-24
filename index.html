@@ -3,53 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
-    
+    <title>Manasi | Photography Portfolio</title>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            margin: 0;
+        /* CSS Reset & Core Styling */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body { 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            background-color: #0a0a0a; 
+            color: #ffffff; 
+            line-height: 1.6; 
+        }
+
+        /* Hero Section - The First Impression */
+        .hero {
+            height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            max-width: 400px;
+            /* Update this URL with your own best photograph! */
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(10, 10, 10, 0.9)), 
+                        url('https://images.unsplash.com/photo-1452587925148-ce544e77e70d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
         }
-        h1 { margin-bottom: 0.5rem; font-weight: 600; }
-        p { font-weight: 300; opacity: 0.9; }
-        .button {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.8rem 2rem;
-            background: white;
-            color: #764ba2;
+
+        .hero h1 { 
+            font-size: clamp(3rem, 8vw, 6rem); 
+            letter-spacing: 8px; 
+            margin-bottom: 15px; 
+            font-weight: 300; 
+            text-transform: uppercase;
+        }
+
+        .hero p { 
+            font-size: 1.2rem; 
+            margin-bottom: 40px; 
+            color: #d1d1d1; 
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            padding: 14px 35px; 
+            border: 1px solid #ffffff; 
+            color: #ffffff; 
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: transform 0.2s;
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
-        .button:hover { transform: scale(1.05); }
+
+        .btn:hover { 
+            background: #ffffff; 
+            color: #0a0a0a; 
+        }
+
+        /* Gallery Section */
+        .gallery-container { 
+            padding: 6rem 2rem; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+        }
+
+        .gallery-container h2 { 
+            text-align: center;
+            font-size: 2rem; 
+            margin-bottom: 4rem; 
+            font-weight: 300; 
+            letter-spacing: 4px; 
+            text-transform: uppercase;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Hover Effect for Images */
+        .gallery-item:hover img { 
+            transform: scale(1.08); 
+        }
+        
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* Minimal Footer */
+        footer { 
+            text-align: center; 
+            padding: 3rem; 
+            border-top: 1px solid #1f1f1f; 
+            font-size: 0.9rem; 
+            color: #666; 
+            letter-spacing: 1px;
+        }
+        
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: #999;
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to My Space</h1>
-        <p>I'm a creator building things on the web. Welcome to my GitHub-hosted home.</p>
-        <img src="profile.jpg" style="width:150px; border-radius:50%;">
-        <a href="#" class="button">View My Work</a>
-    </div>
+
+    <header class="hero">
+        <h1>Manasi</h1>
+        <p>Capturing the unseen details of the world.</p>
+        <a href="#portfolio" class="btn">View My Work</a>
+    </header>
+
+    <section id="portfolio" class="gallery-container">
+        <h2>Selected Works</h2>
+        <div class="gallery">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80" alt="Landscape photography"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516214104703-d25078018ce0?auto=format&fit=crop&w=800&q=80" alt="Portrait photography"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1554046920-90dcac824bd6?auto=format&fit=crop&w=800&q=80" alt="Urban photography"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80" alt="Macro photography"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506744626753-eda8183b1569?auto=format&fit=crop&w=800&q=80" alt="Nature photography"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1470071131384-001b85755536?auto=format&fit=crop&w=800&q=80" alt="Street photography"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>
+            <a href="https://instagram.com/yourhandle">Instagram</a> | 
+            <a href="mailto:your.email@example.com">Contact</a>
+        </p>
+        <p style="margin-top: 15px;">&copy; 2026 Manasi Photography.</p>
+    </footer>
+
 </body>
 </html>
